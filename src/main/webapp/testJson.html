@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* var x1 = (); // 没有这种写法
+	 var x2 = [];
+	 var x3 = {};
+	 var x4 = /ss/; // 测试一个字符串中是否包含该子字符串  */
+	/* 声明一个js对象 */
+	var p1 = {
+		"name" : "马超",
+		"age" : 18,
+		"addr" : "群雄"
+	}
+	/* alert(typeof p1); */
+	var p2 = {
+		"name" : "马腾",
+		"age" : 32,
+		"run" : function() {
+			return this.name + ":" + this.age;
+		}
+	}
+	/* 	alert(p2.name);
+	 alert(p2.age);
+	 alert(p2.run()); */
+	// p3.friends[0].friends[2]
+	var p3 = {
+		"name" : "黄盖",
+		"age" : 58,
+		"friends" : [{
+			"name":"刘备",
+			"age":32,
+			"friends":["曹操","曹植","曹丕"]
+		},{
+			"name":"关羽",
+			"age":31,
+			"friends":["诸葛亮","黄月英","大乔"]
+		},{
+			"name":"关羽",
+			"age":30,
+			"friends":["小乔","孙尚香","孙策"]	
+		}]
+	};
+	 alert(p3.friends[0].friends[2]);
+</script>
+</head>
+<body>json格式...
+</body>
+</html>
