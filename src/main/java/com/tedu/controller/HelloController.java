@@ -188,16 +188,29 @@ public class HelloController {
 		return "forward:/hello";
 	}
 	
-	/* * * * * * * * * * * * * * * * * * * *
-	 * 测试springmvc中的重定向			   *
-	 * 从/testRedirect重定向到/hello路径   *
-	 * * * * * * * * * * * * * * * * * * * */
+	/* * * * * * * * * * * * * * * * * * * * * * * * *
+	 * 测试springmvc中的重定向			   			 *
+	 * 从/testRedirect重定向到http//www.baidu.com	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * */
 	@RequestMapping("/testRedirect")
 	public String testRedirect() {
 		System.out.println("HelloController.testRedirect()");
-		return "redirect:/hello";
+		return "redirect:http://www.baidu.com";
 	}
 	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * 测试springmvc中GET和POST提交的乱码问题				 *
+	 * GET提交在tomcat8.0以后没有中文乱码问题				 *
+	 * POST提交不管哪个版本的tomcat都会有中文参数乱码问题	 *
+	 * Servlet的处理方式:request.setCharacterEncoding(...)	 *
+	 * springmvc中是通过过滤器处理POST提交的参数乱码问题	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	@RequestMapping("/testParam5")
+	public String testParam5(String username,String password) {
+		System.out.println("username: "+ username);
+		System.out.println("password: "+ password);
+		return "home";
+	}
 	
 	
 	
